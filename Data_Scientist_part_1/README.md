@@ -208,8 +208,8 @@ Prepare data for machine learning with [train test split](https://www.nexa.fr/bl
 
 #### Tasks
 - Split Train_knight.csv into:
-- Training_knight.csv
-- Validation_knight.csv
+    - Training_knight.csv
+    - Validation_knight.csv
 - The split must be random
 
 #### Why?
@@ -218,13 +218,15 @@ to train a model and check if the model is ok
 must explain:
 
 the percentage used :  20% to 30% are recommanded
-why I chose it
+why I chose it? usually we used 20% 
 
 #### Method
 
 1. Random Shuffle (To avoid bias caused by ordered data and ensure randomness)
 2. Split data
 3. Evaluation
+
+the fonction train_test_split exist from sklearn.model_selection so I will use it.
 
 ## Tools
 
@@ -242,6 +244,10 @@ https://matplotlib.org/stable/plot_types/stats/hist_plot.html
 ex01 :
 
 https://en.wikipedia.org/wiki/Correlation_coefficient
+
+ex04:
+
+https://en.wikipedia.org/wiki/Feature_scaling
 
 
 ex05 :
