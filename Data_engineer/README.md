@@ -1,4 +1,5 @@
-# Piscine datascience - 0
+# Data Engeneer
+Piscine datascience - 0
 
 Creation of a DB
 
@@ -6,6 +7,8 @@ This project is part of the Data Science Piscine.
 The goal of this module is to learn the basics of **database creation and data preparation** using PostgreSQL.
 
 A data engineer is responsible for preparing and organizing data so that analysts and data scientists can use it efficiently.
+
+## Project Structure
 
 | Exercice | Description |
 |:------:| ----------- |
@@ -72,7 +75,7 @@ cat data_2022_dec.csv  | head -n 1
 >> event_time,event_type,product_id,price,user_id,user_session
 ```
 
-connection t o
+connection 
 ```bash
 sudo apt install postgresql-client-common
 psql -U your_login -d piscineds -h localhost -W
@@ -92,8 +95,7 @@ CREATE TABLE data_2022_oct(
 ``uuid`` : *Universally Unique Identifiers* (ex : a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11)
 
 ```SQL
-\copy data_2022_oct FROM '/home/TON_USER/Python_Data_Science/Piscine_datascience_0/subject/customer/data_2022_oct.csv' DELIMITER ',' CSV HEADER;
-    );
+\copy data_2022_oct FROM 'path/Piscine_datascience_0/subject/customer/data_2022_oct.csv' DELIMITER ',' CSV HEADER;
 ```
 
 ---
@@ -122,3 +124,12 @@ The objective of this module is to understand how to:
 - Create and configure a database
 - Import and structure data
 - Prepare datasets for analysis
+
+
+### reference 
+
+https://www.datacamp.com/fr/tutorial/tutorial-postgresql-python
+
+https://www.postgresql.org/docs/current/datatype.html
+
+https://dbeaver.com/docs/dbeaver/
