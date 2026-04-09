@@ -3,7 +3,6 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 def verification(df, train, test):
-        # verification
         df_rows = len(df)
         train_rows = len(train)
         test_rows = len(test)
