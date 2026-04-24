@@ -163,8 +163,7 @@ Standardize the dataset.
 #### Tasks
 Apply standardization (mean = 0, standard deviation = 1)
 Print the transformed data
-Recreate one graph from -----
-### Exercise 02 using standardized data
+Recreate one graph from using standardized data
 
 ***Formula***
 `` 
