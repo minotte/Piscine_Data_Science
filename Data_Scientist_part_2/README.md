@@ -82,6 +82,30 @@ wget https://cdn.intra.42.fr/document/document/45787/Train_knight.csv
 - Display confusion matrix
 - Use predictions vs ground truth
 
+Jedi = Positive
+Sith = Negative
+
+#### lexical
+
+| var | definition | means |
+| ---- | ---- | ---- | 
+| tp | true postitive | predict Jedi AND True |
+| tn | true negative | predict Jedi AND False |
+| fp | false postitive | predict Sith AND True | 
+| fn | false negative | predict Sith AND False | 
+
+the columns are the predict values
+the rows are the real values.
+![confusing matrix](./img/Confusion_Matrix_for_Binary_Classes.avif)
+
+| Classification Metrics | formula |
+| ---- | ---- |
+| Precision |![Precision](./img/precision.avif) |
+| Recall |![Recall](./img/recall.avif) |
+| F1-score |![F1-score](./img/f1.avif) |
+| Accuracy |![Accuracy](./img/accuracy.avif) |
+
+
 #### Except result
 ```bash
 $> ./Confusion\_Matrix.* predictions.txt truth.txt
@@ -93,20 +117,35 @@ accuracy 0.46 100
 [30 21]]
 ```
 
+[doc](#ex00)
 
 > [Warning] Critical exercise: if incorrect → evaluation stops
 
 
 ### Exercise 01 – Heatmap
+
 - Compute correlation matrix
 - Display it as a heatmap
 - Identify relationships between features
+
+
+which features are usefull to know if it's Jedi: 
+Empowered       -0.793652
+Prescience      -0.790066
+Stims           -0.786797
+Recovery        -0.777633
+Sprint          -0.739672
+Strength        -0.737403
+
+[doc](#ex01)
 
 ### Exercise 02 – Variances (PCA intuition)
 - Compute variance of each feature
 - Calculate cumulative variance
 - Determine number of components to reach 90%
 - Plot cumulative variance graph
+
+![variance](./img/variance.svg)
 
 ### Exercise 03 – Feature Selection (VIF)
 - Detect multicollinearity using ***Variance Inflation Factor*** (VIF)
@@ -128,9 +167,23 @@ accuracy 0.46 100
 - Achieve ≥ 92% F1-score
 
 ### Exercise 06 – Voting Classifier
-Combine multiple models
-Use a Voting Classifier
-Generate predictions (``Voting.txt``)
-Achieve ≥ 94% F1-score
+- Combine multiple models
+- Use a Voting Classifier
+- Generate predictions (``Voting.txt``)
+- Achieve ≥ 94% F1-score
 
 ## Reference
+
+### ex00
+confusion matrice:
+https://www.ibm.com/fr-fr/think/topics/confusion-matrix#:~:text=La%20matrice%20de%20confusion%20permet,d%27un%20jeu%20de%20données.
+https://www.v7labs.com/blog/confusion-matrix-guide
+https://www.youtube.com/watch?v=MNejgy2_1Dc
+
+graph confusion matrice: https://scikit-learn.org/stable/modules/generated/sklearn.metrics.ConfusionMatrixDisplay.html
+
+### ex01
+
+graph heatmap: 
+https://seaborn.pydata.org/generated/seaborn.heatmap.html
+https://www.youtube.com/watch?v=1fFVt4tQjRE
