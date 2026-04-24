@@ -128,14 +128,17 @@ accuracy 0.46 100
 - Display it as a heatmap
 - Identify relationships between features
 
+between -1 and 1
 
-which features are usefull to know if it's Jedi: 
+which features are usefull to know if it's Jedi:
+```
 Empowered       -0.793652
 Prescience      -0.790066
 Stims           -0.786797
 Recovery        -0.777633
 Sprint          -0.739672
 Strength        -0.737403
+```
 
 [doc](#ex01)
 
@@ -145,12 +148,38 @@ Strength        -0.737403
 - Determine number of components to reach 90%
 - Plot cumulative variance graph
 
-![variance](./img/variance.svg)
+We have 31 column is complex so we will use PCA to reduce on principal componante
+#### [Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis):
+- linear dimensionnal reduction and keep the maximum of information
+
+- highlighting the hidden structures and relationships in the data
+
+
+why 90% : it's a benchmark in data science
+ |||
+ |----|---|
+ | too few component  | lose informations |
+ | too much component | useless informations |
 
 ### Exercise 03 – Feature Selection (VIF)
 - Detect multicollinearity using ***Variance Inflation Factor*** (VIF)
 - Remove highly correlated features
 - Keep features with **VIF** < 5
+
+read [wiki](https://en.wikipedia.org/wiki/Variance_inflation_factor):
+
+#### formula:
+Variance Inflation Factor:
+``VIF = 1 / (1 - R²)
+`` 
+- VIF = 1: no correlation (parfait)
+- VIF < 5: ok
+- VIF > 5: High multicollinearity is present.
+- VIF > 10:  This signals serious multicollinearity.
+
+Tolerance:
+``Tolerance = 1 / VIF``
+weak Tolerence = multicollinearity problem
 
 ### Exercise 04 – Tree Model
 - Train:
@@ -158,6 +187,47 @@ Strength        -0.737403
 - Display tree structure
 - Generate predictions (``Tree.txt``)
 - Achieve ≥ 90% F1-score
+
+#### Decision tree classifier:
+1. Start with the ``entire dataset`` at the root node.
+2. Select the *best feature* to split the data (based on measures like ***Gini impurity***).
+3. Create ``child nodes`` for each possible value of the selected feature.
+4. Repeat steps 2–3 for each child node until a stopping criterion is met (e.g., maximum depth reached, minimum samples per leaf, or pure leaf nodes).
+5. Assign the majority class to each leaf node.
+
+at the end, we should have something like ``[Yes, Yes, ..., No, Yes]``. there is more yes so the prediction will be **yes**
+
+- max_depth
+    - small → simple model (risk underfitting)
+    - big → complex model (risk overfitting)
+
+- min_samples_split
+    - small(2) → splits everywhere → overfitting
+    - big → less splits → more stable
+
+- min_samples_leaf:
+    - small(1) → leaves too specific → overfitting
+    - big → general leaves
+
+> [!WARNING] Problem:
+> Decision tree can ``overfitting``
+> it can be perfect for **train** and useless with **test**
+
+> [!TIP]
+> PCA: reduce dimensions
+> VIF: remove multicollinearity
+
+
+Gini : 
+![Gini](./img/gini.svg)
+
+#### Random Forest Classifier model
+
+- it's base on the implementation of Decision tree classifier
+- it's intuitive
+- quick to train
+but
+- difficult to read results
 
 ### Exercise 05 – KNN
 - Implement K-Nearest Neighbors
@@ -187,3 +257,22 @@ graph confusion matrice: https://scikit-learn.org/stable/modules/generated/sklea
 graph heatmap: 
 https://seaborn.pydata.org/generated/seaborn.heatmap.html
 https://www.youtube.com/watch?v=1fFVt4tQjRE
+
+### ex02
+https://www.youtube.com/watch?v=IhBjLeDpOGg
+https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
+https://medium.com/operations-research-bit/principal-component-analysis-with-python-a-deep-dive-0c5195bff087
+https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors
+
+
+### ex03
+https://en.wikipedia.org/wiki/Variance_inflation_factor
+https://www.datacamp.com/tutorial/variance-inflation-factor
+
+### ex04
+https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
+https://medium.com/data-science/decision-tree-classifier-explained-a-visual-guide-with-code-examples-for-beginners-7c863f06a71e
+https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
+https://www.devoteam.com/fr/expert-view/algorithme-n2-comprendre-comment-fonctionne-un-random-forest-en-5-min/
+https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html
+https://scikit-learn.org/stable/modules/generated/sklearn.tree.plot_tree.html
