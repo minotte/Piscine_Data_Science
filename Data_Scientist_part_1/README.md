@@ -4,7 +4,7 @@
 
 This project is part of the Data Science Piscine and focuses on understanding the present state of data through exploration, transformation, and preparation for machine learning.
 
-The #### Goal is to analyze a dataset of Star Wars knights and determine whether it was possible to predict if a knight would turn to the dark side based on their abilities.
+The goal is to analyze a dataset of Star Wars knights and determine whether it was possible to predict if a knight would turn to the dark side based on their abilities.
 
 You will work with:
 
