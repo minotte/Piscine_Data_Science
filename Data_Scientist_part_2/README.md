@@ -209,7 +209,8 @@ at the end, we should have something like ``[Yes, Yes, ..., No, Yes]``. there is
     - small(1) → leaves too specific → overfitting
     - big → general leaves
 
-> [!WARNING] Problem:
+> [!WARNING]
+> Problem:
 > Decision tree can ``overfitting``
 > it can be perfect for **train** and useless with **test**
 
