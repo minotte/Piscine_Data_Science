@@ -53,7 +53,7 @@ I choose DBeaver because it's opensource, free and very popular
 | User: | your_login  |
 | Password: | mysecretpassword  |
 
-[alt](printscreen)
+![alt](printscreen)
 
 The tool should allow easy browsing and manipulation of records.
 
