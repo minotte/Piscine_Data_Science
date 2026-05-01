@@ -20,14 +20,12 @@ def main() -> int:
         table = "items"
         print("Creating table:", table)
 
-        with open(path, "r") as f:
-            header = f.readline().strip().split(",")
-
-        columns = ", ".join([f'"{col}" TEXT' for col in header])
-
         cur.execute(f"""
             CREATE TABLE IF NOT EXISTS {table} (
-                {columns}
+                product_id INTEGER,
+                category_id BIGINT,
+                category_code TEXT,
+                brand TEXT
             );
         """)
 

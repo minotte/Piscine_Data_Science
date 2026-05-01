@@ -16,3 +16,7 @@ services:
 
 volumes:
   postgres_data:
+
+networks:
+  app_network:
+    driver: bridge
