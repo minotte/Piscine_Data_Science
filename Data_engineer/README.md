@@ -8,6 +8,18 @@ The goal of this module is to learn the basics of **database creation and data p
 
 A data engineer is responsible for preparing and organizing data so that analysts and data scientists can use it efficiently.
 
+
+## Prerequire
+
+At the root of your project
+```bash
+wget https://cdn.intra.42.fr/document/document/45788/subject.zip
+unzip subject.zip
+python3 -m  venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt -v
+```
+
 ## Project Structure
 
 | Exercice | Description |
@@ -17,6 +29,8 @@ A data engineer is responsible for preparing and organizing data so that analyst
 | [ex02](#ex02--first-table) | First Table |
 | [ex03](#ex03--automatic-table-creation) | Automatic Table Creation |
 | [ex04](#ex04--items-table) | Items Table |
+
+
 
 ## Exercises
 
@@ -53,7 +67,7 @@ I choose DBeaver because it's opensource, free and very popular
 | User: | your_login  |
 | Password: | mysecretpassword  |
 
-![alt](printscreen)
+[alt](printscreen)
 
 The tool should allow easy browsing and manipulation of records.
 
@@ -67,6 +81,8 @@ Requirements:
 - Column names must match the CSV file
 - Use at least **six different data types**
 - The **first column must be a DATETIME**
+
+
 
 
 what column you need:
